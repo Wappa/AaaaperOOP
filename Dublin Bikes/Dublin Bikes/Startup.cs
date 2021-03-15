@@ -33,7 +33,7 @@ namespace Dublin_Bikes
                 swagger.SwaggerDoc("v1", new OpenApiInfo  
                 {   
                     Version= "v1",   
-                    Title = "Dorset College API",  
+                    Title = "Dublin Bikes",  
                     Description="ASP.NET Core 3.1 Web API Documentaion" 
                 });
             });  
