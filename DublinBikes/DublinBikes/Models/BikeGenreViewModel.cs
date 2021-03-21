@@ -6,7 +6,7 @@ namespace DublinBikes.Models
     public class BikeGenreViewModel
     {
         public List<BikeStation> BikeStations { get; set; }
-        public SelectList Names { get; set; }
+        public SelectList Statuss { get; set; }
         public string BikeStationName { get; set; }
         public string SearchString { get; set; }
     }

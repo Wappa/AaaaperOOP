@@ -23,8 +23,8 @@ namespace DublinBikes.Controllers
         {
             // Use LINQ to get list of genres.
             IQueryable<string> genreQuery = from m in _context.BikeStation
-                orderby m.Name
-                select m.Name;
+                orderby m.Status
+                select m.Status;
 
             var bikeStations = from m in _context.BikeStation
                 select m;
@@ -36,12 +36,12 @@ namespace DublinBikes.Controllers
 
             if (!string.IsNullOrEmpty(bikeStationName))
             {
-                bikeStations = bikeStations.Where(x => x.Name == bikeStationName);
+                bikeStations = bikeStations.Where(x => x.Status == bikeStationName);
             }
 
             var bikeNameVM = new BikeGenreViewModel
             {
-                Names = new SelectList(await genreQuery.Distinct().ToListAsync()),
+                Statuss = new SelectList(await genreQuery.Distinct().ToListAsync()),
                 BikeStations = await bikeStations.ToListAsync()
             };
 
