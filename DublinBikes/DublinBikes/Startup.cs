@@ -24,7 +24,7 @@ namespace DublinBikes
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
-            services.AddDbContext<MvcMovieContext>(options =>
+            services.AddDbContext<Context>(options =>
             options.UseMySQL(Configuration.GetConnectionString("MvcMovieContext")));
         }
 
