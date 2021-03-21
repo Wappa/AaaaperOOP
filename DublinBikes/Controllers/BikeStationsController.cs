@@ -24,6 +24,29 @@ namespace DublinBikes.Controllers
         {
             return View(await _context.BikeStation.ToListAsync());
         }
-        
+
+        // GET: BikeStations/Details/5
+        public async Task<IActionResult> Details(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var bikeStation = await _context.BikeStation
+                .FirstOrDefaultAsync(m => m.Id == id);
+            if (bikeStation == null)
+            {
+                return NotFound();
+            }
+
+            return View(bikeStation);
+        }
+
+        // GET: BikeStations/Create
+        public IActionResult Create()
+        {
+            return View();
+        }
     }
 }
