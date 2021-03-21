@@ -1,32 +1,29 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Lucas\\Desktop\\DublinBikes\\DublinBikes.csproj": {}
+    "/home/yanis/Bureau/AaaaperOOP/AaaaperOOP/DublinBikes/DublinBikes.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Lucas\\Desktop\\DublinBikes\\DublinBikes.csproj": {
+    "/home/yanis/Bureau/AaaaperOOP/AaaaperOOP/DublinBikes/DublinBikes.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Lucas\\Desktop\\DublinBikes\\DublinBikes.csproj",
+        "projectUniqueName": "/home/yanis/Bureau/AaaaperOOP/AaaaperOOP/DublinBikes/DublinBikes.csproj",
         "projectName": "DublinBikes",
-        "projectPath": "C:\\Users\\Lucas\\Desktop\\DublinBikes\\DublinBikes.csproj",
-        "packagesPath": "C:\\Users\\Lucas\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Lucas\\Desktop\\DublinBikes\\obj\\",
+        "projectPath": "/home/yanis/Bureau/AaaaperOOP/AaaaperOOP/DublinBikes/DublinBikes.csproj",
+        "packagesPath": "/home/yanis/.nuget/packages/",
+        "outputPath": "/home/yanis/Bureau/AaaaperOOP/AaaaperOOP/DublinBikes/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Lucas\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/home/yanis/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
-          "net5.0"
+          "net50"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net5.0": {
-            "targetAlias": "net5.0",
+          "net50": {
             "projectReferences": {}
           }
         },
@@ -37,8 +34,7 @@
         }
       },
       "frameworks": {
-        "net5.0": {
-          "targetAlias": "net5.0",
+        "net50": {
           "dependencies": {
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
@@ -73,25 +69,12 @@
               "version": "[6.1.0, )"
             }
           },
-          "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48"
-          ],
-          "assetTargetFallback": true,
-          "warn": true,
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
-            },
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.200\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/lib/mono/msbuild/Current/bin/RuntimeIdentifierGraph.json"
         }
       }
     }
