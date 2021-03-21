@@ -20,9 +20,17 @@ namespace DublinBikes.Controllers
         }
 
         // GET: BikeStations
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string searchString)
         {
-            return View(await _context.BikeStation.ToListAsync());
+            var bikeStations = from m in _context.BikeStation
+                select m;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                bikeStations = bikeStations.Where(s => s.Name.Contains(searchString));
+            }
+
+            return View(await bikeStations.ToListAsync());
         }
 
         // GET: BikeStations/Details/5
