@@ -18,19 +18,34 @@ namespace DublinBikes.Controllers
         {
             _context = context;
         }
-
-        // GET: BikeStations
-        public async Task<IActionResult> Index(string searchString)
+        // GET: Movies
+        public async Task<IActionResult> Index(string bikeStationName, string searchString)
         {
+            // Use LINQ to get list of genres.
+            IQueryable<string> genreQuery = from m in _context.BikeStation
+                orderby m.Name
+                select m.Name;
+
             var bikeStations = from m in _context.BikeStation
                 select m;
 
-            if (!String.IsNullOrEmpty(searchString))
+            if (!string.IsNullOrEmpty(searchString))
             {
                 bikeStations = bikeStations.Where(s => s.Name.Contains(searchString));
             }
 
-            return View(await bikeStations.ToListAsync());
+            if (!string.IsNullOrEmpty(bikeStationName))
+            {
+                bikeStations = bikeStations.Where(x => x.Name == bikeStationName);
+            }
+
+            var bikeNameVM = new BikeGenreViewModel
+            {
+                Names = new SelectList(await genreQuery.Distinct().ToListAsync()),
+                BikeStations = await bikeStations.ToListAsync()
+            };
+
+            return View(bikeNameVM);
         }
 
         // GET: BikeStations/Details/5

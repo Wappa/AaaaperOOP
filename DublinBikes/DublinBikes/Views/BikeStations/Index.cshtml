@@ -1,4 +1,5 @@
-﻿@model IEnumerable<DublinBikes.Models.BikeStation>
+﻿
+@model DublinBikes.Models.BikeGenreViewModel
 
 @{
     ViewData["Title"] = "Index";
@@ -11,7 +12,11 @@
 </p>
 <form asp-controller="BikeStations" asp-action="Index">
     <p>
-        Name: <input type="text" name="SearchString" />
+        <select asp-for="BikeStationName" asp-items="Model.Names">
+            <option value="">All</option>
+        </select>
+        
+        Title: <input type="text" asp-for="SearchString" />
         <input type="submit" value="Filter" />
     </p>
 </form>
@@ -19,40 +24,40 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.ContractName)
+                @Html.DisplayNameFor(model => model.BikeStations[0].ContractName)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Name)
+                @Html.DisplayNameFor(model => model.BikeStations[0].Name)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.adress)
+                @Html.DisplayNameFor(model => model.BikeStations[0].adress)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.latitude)
+                @Html.DisplayNameFor(model => model.BikeStations[0].latitude)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.longitude)
+                @Html.DisplayNameFor(model => model.BikeStations[0].longitude)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.banking)
+                @Html.DisplayNameFor(model => model.BikeStations[0].banking)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.AvailableBikes)
+                @Html.DisplayNameFor(model => model.BikeStations[0].AvailableBikes)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.AvailableStands)
+                @Html.DisplayNameFor(model => model.BikeStations[0].AvailableStands)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Capacity)
+                @Html.DisplayNameFor(model => model.BikeStations[0].Capacity)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Status)
+                @Html.DisplayNameFor(model => model.BikeStations[0].Status)
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
+@foreach (var item in Model.BikeStations) {
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.ContractName)
