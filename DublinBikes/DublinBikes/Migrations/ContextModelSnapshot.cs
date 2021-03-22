@@ -52,6 +52,9 @@ namespace DublinBikes.Migrations
                     b.Property<double>("longitude")
                         .HasColumnType("double");
 
+                    b.Property<bool>("paymentAtTheTerminal")
+                        .HasColumnType("tinyint(1)");
+
                     b.HasKey("Id");
 
                     b.ToTable("BikeStation");

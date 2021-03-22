@@ -31,7 +31,8 @@ namespace DublinBikes.Models
                         AvailableBikes = 12,
                         AvailableStands = 8,
                         Capacity = 20,
-                        Status = "open"
+                        Status = "open",
+                        paymentAtTheTerminal = true
                     }
                 );
                 context.SaveChanges();

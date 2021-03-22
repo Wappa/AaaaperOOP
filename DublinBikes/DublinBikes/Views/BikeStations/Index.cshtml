@@ -53,6 +53,9 @@
             <th>
                 @Html.DisplayNameFor(model => model.BikeStations[0].Status)
             </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BikeStations[0].paymentAtTheTerminal)
+            </th>
             <th></th>
         </tr>
     </thead>
@@ -88,6 +91,9 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Status)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.paymentAtTheTerminal)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |

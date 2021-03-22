@@ -8,8 +8,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DublinBikes.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20210321140742_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20210322134437_paymentAtTheTerminal")]
+    partial class paymentAtTheTerminal
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -53,6 +53,9 @@ namespace DublinBikes.Migrations
 
                     b.Property<double>("longitude")
                         .HasColumnType("double");
+
+                    b.Property<bool>("paymentAtTheTerminal")
+                        .HasColumnType("tinyint(1)");
 
                     b.HasKey("Id");
 

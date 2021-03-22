@@ -18,5 +18,7 @@ namespace DublinBikes.Models
         public int AvailableStands { get; set; }
         public int Capacity { get; set; }
         public string Status { get; set; }
+
+        public bool paymentAtTheTerminal { get; set; }
     }
 }
