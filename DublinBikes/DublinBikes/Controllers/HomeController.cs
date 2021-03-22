@@ -5,9 +5,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using Dublin_Bikes.Models;
+using DublinBikes.Models;
 
-namespace Dublin_Bikes.Controllers
+namespace DublinBikes.Controllers
 {
     public class HomeController : Controller
     {

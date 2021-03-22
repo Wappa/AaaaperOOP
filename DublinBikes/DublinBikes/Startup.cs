@@ -2,17 +2,16 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using DublinBikes.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Dublin_Bikes.Data;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.OpenApi.Models;
 
-namespace Dublin_Bikes
+namespace DublinBikes
 {
     public class Startup
     {
@@ -27,22 +26,8 @@ namespace Dublin_Bikes
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
-            services.AddControllers();
-            services.AddDbContext<Context>(opt =>
-            {
-                opt.UseMySql(Configuration.GetConnectionString("DefaultConnection"));
-            });
-
-            services.AddSwaggerGen(swagger =>  
-            {  
-                //This is to generate the Default UI of Swagger Documentation  
-                swagger.SwaggerDoc("v1", new OpenApiInfo  
-                {   
-                    Version= "v1",   
-                    Title = "Dublin Bikes",  
-                    Description="ASP.NET Core 3.1 Web API Documentaion" 
-                });
-            });  
+            services.AddDbContext<Context>(options =>
+            options.UseMySQL(Configuration.GetConnectionString("Context")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -51,8 +36,12 @@ namespace Dublin_Bikes
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-                app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "AaaaperOOP"));
+            }
+            else
+            {
+                app.UseExceptionHandler("/Home/Error");
+                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
+                app.UseHsts();
             }
 
             app.UseHttpsRedirection();

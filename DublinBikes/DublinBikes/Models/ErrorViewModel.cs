@@ -1,6 +1,6 @@
 using System;
 
-namespace Dublin_Bikes.Models
+namespace DublinBikes.Models
 {
     public class ErrorViewModel
     {
