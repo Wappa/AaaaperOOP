@@ -24,19 +24,10 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.BikeStations[0].ContractName)
-            </th>
-            <th>
                 @Html.DisplayNameFor(model => model.BikeStations[0].Name)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.BikeStations[0].adress)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.BikeStations[0].latitude)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.BikeStations[0].longitude)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.BikeStations[0].banking)
@@ -53,9 +44,6 @@
             <th>
                 @Html.DisplayNameFor(model => model.BikeStations[0].Status)
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.BikeStations[0].paymentAtTheTerminal)
-            </th>
             <th></th>
         </tr>
     </thead>
@@ -63,19 +51,10 @@
 @foreach (var item in Model.BikeStations) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.ContractName)
-            </td>
-            <td>
                 @Html.DisplayFor(modelItem => item.Name)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.adress)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.latitude)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.longitude)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.banking)
@@ -91,9 +70,6 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Status)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.paymentAtTheTerminal)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
