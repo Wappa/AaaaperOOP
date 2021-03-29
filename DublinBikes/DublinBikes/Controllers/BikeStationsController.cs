@@ -77,7 +77,7 @@ namespace DublinBikes.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,ContractName,Name,adress,latitude,longitude,banking,AvailableBikes,AvailableStands,Capacity,Status")] BikeStation bikeStation)
+        public async Task<IActionResult> Create([Bind("Id,ContractName,Name,adress,latitude,longitude,banking,AvailableBikes,AvailableStands,Capacity,Status,paymentAtTheTerminal")] BikeStation bikeStation)
         {
             if (ModelState.IsValid)
             {
@@ -109,7 +109,7 @@ namespace DublinBikes.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind ("Id,ContactName,Name,adress,latitude,longitude,banking,AvailableBikes,AvailableStands,Capacity,Status,paymentAtTheTerminal")] BikeStation bikeStation)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,ContractName,Name,adress,latitude,longitude,banking,AvailableBikes,AvailableStands,Capacity,Status,paymentAtTheTerminal")] BikeStation bikeStation)
         {
             if (id != bikeStation.Id)
             {
